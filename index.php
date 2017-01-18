@@ -20,8 +20,9 @@ define('APP_DEBUG',True);
 // 分离common模块
 define('COMMON_PATH','./Common/');
 
-// // 自动绑定(自动生成)产品某块
+// 自动绑定(自动生成)产品某块
 // define("BIND_MODULE","Good");
+// define('BUILD_CONTROLLER_LIST','Good');
 // define('BUILD_MODEL_LIST','Good');
 
 // 定义应用目录

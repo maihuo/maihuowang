@@ -6,8 +6,11 @@ class GoodController extends Controller {
 	/**
 	 * Browse Goods,Get Goods List
 	 */
-    public function browse(){
+    public function browse($pageID = 1, $rowCount = NULL){
+    	// 如果不帶參數,使用這種形式
+    	//$pagerID = I("get.id", 1);
         $Good = D("Good");
-        die('sss');
+        $return = $Good->getGoodsList($pagerID, $rowCount);
+        echo json_encode($return);exit;
     }
 }
