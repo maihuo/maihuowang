@@ -17,6 +17,13 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
 define('APP_DEBUG',True);
 
+// 分离common模块
+define('COMMON_PATH','./Common/');
+
+// // 自动绑定(自动生成)产品某块
+// define("BIND_MODULE","Good");
+// define('BUILD_MODEL_LIST','Good');
+
 // 定义应用目录
 define('APP_PATH','./Application/');
 
