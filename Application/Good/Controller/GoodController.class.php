@@ -8,9 +8,9 @@ class GoodController extends Controller {
 	 */
     public function browse($pageID = 1, $rowCount = NULL){
     	// 如果不帶參數,使用這種形式
-    	//$pagerID = I("get.id", 1);
+    	// $pageID = I("get.pageID", 1);
         $Good = D("Good");
         $return = $Good->getGoodsList($pagerID, $rowCount);
-        echo json_encode($return);exit;
+        $this->ajaxReturn($return);
     }
 }

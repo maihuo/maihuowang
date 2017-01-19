@@ -21,8 +21,10 @@ return array(
     'DB_MASTER_NUM'         =>  1, // 读写分离后 主服务器数量
     'DB_SLAVE_NO'           =>  '', // 指定从服务器序号
 
-    "DB_CONFIG_GUITOO"      => 'mysql://qdm177116231:Ssp6315417@qdm177116231.my3w.com/qdm177116231_db#utf8',
+    "DB_CONFIG_GUITOO"      => 'mysql://qdm177116231:Ssp6315417@qdm177116231.my3w.com/qdm177116231_db#utf8',// 数据库配置
 
     "PAGER_ROW_COUNT"       => 20,//默認分页显示条数
-    
+
+    'URL_PATHINFO_DEPR'     => '-',// 更改PATHINFO参数分隔符
+    'URL_PARAMS_BIND_TYPE'  => 1,  //url参数绑定按照参数顺序(如果是按照参数名称设置为0)
 );

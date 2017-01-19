@@ -16,14 +16,14 @@ class GoodModel extends Model {
 	public function getGoodsList($pageID = 1, $rowCount = NULL){
 		if(!$rowCount) $rowCount = C("PAGER_ROW_COUNT");
  		$map = ['deleted' => ["NEQ", "1"]];
-		$goods = $this->field(["id","title","description","marketprice","productprice"])->where($map)->page($pageID, $rowCount)->select();
+		$goods = $this->field(["id","title","description","marketprice","productprice","concat('".PUBLIC_PATH."',thumb)"=>"image"])->where($map)->page($pageID, $rowCount)->select();
 		$count = $this->where($map)->count();
-		if(!function_exists("newPage")){ 
-			function newPage($count, $rowCount, $params){
-			return new \Think\Page($count, $rowCount ,NULL);
-		}}
+		// if(!function_exists("newPage")){ 
+		// 	function newPage($count, $rowCount, $params){
+		// 	return new \Think\Page($count, $rowCount ,NULL);
+		// }}
 		$pager = newPage($count,$rowCount, NULL);
 		// $pager->show() 返回一段html片段
-		return ["goods" => $goods, "pageInfo" => $pager->show()];
+		return ["goods" => $goods, "totalPages" => ceil($count/$rowCount)];
 	}
 }

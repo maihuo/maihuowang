@@ -1006,8 +1006,8 @@ function U($url='',$vars='',$suffix=true,$domain=false) {
             $url    =   strtolower($url);
         }
         if(!empty($vars)) { // 添加参数
-            foreach ($vars as $var => $val){
-                if('' !== trim($val))   $url .= $depr . $var . $depr . urlencode($val);
+            foreach ($vars as $var => $val){// 更改地址生成的格式
+                if('' !== trim($val))   $url .= $depr . (C('URL_PARAMS_BIND_TYPE') == 0 ? $var . $depr : ''). urlencode($val);
             }                
         }
         if($suffix) {

@@ -28,6 +28,9 @@ define('COMMON_PATH','./Common/');
 // 定义应用目录
 define('APP_PATH','./Application/');
 
+// 定义公共资源的路径
+define('PUBLIC_PATH', './Public/');
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 

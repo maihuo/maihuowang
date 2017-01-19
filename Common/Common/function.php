@@ -36,15 +36,15 @@
  * @param integer $listRows 列出的行数
  * @return \Think\Page
      */
-// function newPage($count, $listRows = null) {
-//     $page = new \Think\Page($count, is_null($listRows) ? C('PAGE_LIST_ROWS') : $listRows);
-//     //$page->setConfig('header', '条信息>&nbsp;');
-//     $page->setConfig('prev','<');
-//     $page->setConfig('next','>');
-//     $page->setConfig('theme',' %HEADER% %UP_PAGE% %FIRST% %LINK_PAGE% %DOWN_PAGE% %END%');
-//     //<共 <span style="color:rgb(54,168,96);">%TOTAL_ROW%</span>
-//     return $page;
-//     }
+function newPage($count, $listRows = null) {
+    $page = new \Think\Page($count, is_null($listRows) ? C('PAGE_LIST_ROWS') : $listRows);
+    //$page->setConfig('header', '条信息>&nbsp;');
+    $page->setConfig('prev','<');
+    $page->setConfig('next','>');
+    $page->setConfig('theme',' %HEADER% %UP_PAGE% %FIRST% %LINK_PAGE% %DOWN_PAGE% %END%');
+    //<共 <span style="color:rgb(54,168,96);">%TOTAL_ROW%</span>
+    return $page;
+    }
 
 /*
  * dump a var.
@@ -57,4 +57,5 @@ function p($var)
     echo "<xmp class='a-left'>";
     print_r($var);
     echo "</xmp>";
+    die;
 }
