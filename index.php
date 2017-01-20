@@ -15,7 +15,7 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-define('APP_DEBUG',True);
+define('APP_DEBUG',TRUE);
 
 // 分离common模块
 define('COMMON_PATH','./Common/');
@@ -30,6 +30,9 @@ define('APP_PATH','./Application/');
 
 // 定义公共资源的路径
 define('PUBLIC_PATH', './Public/');
+
+//定义根目录
+//define('__ROOT__', __DIR__.DIRECTORY_SEPARATOR);
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';

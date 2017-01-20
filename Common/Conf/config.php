@@ -27,4 +27,29 @@ return array(
 
     'URL_PATHINFO_DEPR'     => '-',// 更改PATHINFO参数分隔符
     'URL_PARAMS_BIND_TYPE'  => 1,  //url参数绑定按照参数顺序(如果是按照参数名称设置为0)
+
+    // 开启路由
+	"URL_ROUTER_ON" => true,
+	// 路由规则，类似于rewrite
+	"URL_ROUTE_RULES" => array(
+		// 写法1
+		//"Test/:name" => "Blog/read?name=:1",
+		// 写法2 : :/name动态变量会自动传入，跟参数名称保持一致
+		//"Test/:name|md5/[:age\d]$" => ["index/index"],
+		// 正则写法
+		//"/^(blog|article)\/(\d{2,4})\/(\d{4})$/" => "Test/:1/:2", 
+		// 闭包写法
+		//"mt/:name/[:age]" => function ($age, $name){
+			//echo "hello $name $age";
+			//$_SERVER["PATH_INFO"] = "Test/laokiea/12";
+			//return false;
+
+			// // 处理输出图片(.htaccess里已经限制,防止出现按照路由形式访问)
+			// '/^Public\/images\/(\d{4})\/(\d{2})\/(\w+)\.(jpg|jpeg|gif|bmp|png)$/' => "Good/Good/printImage?:1-:2-:3-:4",
+	),
+	'SHOW_ERROR_MSG'        =>  true,    // 显示错误信息（仅在开发调试模式下打开）
+	'ERROR_PAGE'            => '',       // 线上模式，指引用户跳向错误页面
+	'ERROR_MESSAGE'         =>  '页面错误！请稍后再试～',//友好显示错误
+
+	'LOAD_EXT_CONFIG'       => 'tips', //加载扩展配置文件
 );

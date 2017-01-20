@@ -59,3 +59,32 @@ function p($var)
     echo "</xmp>";
     die;
 }
+
+/**
+ * check session
+ */
+function checkSessionStart()
+{
+    if(!C("SESSION_AUTO_START")) session_start();
+}
+
+/**
+ * get tip
+ * example: 一级 __("USER_NAME") => "laokiea" 二级 __("USER.USER_NAME") => "laokiea" 
+ */
+function __($cName=NULL, $formatData=NULL)
+{
+    if(is_null($cName)) return "";
+    $cValue = C($cName);
+    if(!is_array($formatData)) $formatData = (array)$formatData;
+    return vsprintf($cValue, $formatData);
+}
+
+/**
+ * 友好显示错误，前提都是'ERROR_PAGE'            => ''为空的情况下，否则都是之前跳转到错误页面
+ */
+function throwError($error=NULL)
+{
+    if(!C("SHOW_ERROR_MSG")) E(!__("THROW_ERROR_FRIENDLY") ? C("ERROR_MESSAGE") ? __("THROW_ERROR_FRIENDLY"));
+    else E($error); 
+}
