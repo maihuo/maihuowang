@@ -20,7 +20,7 @@ define('APP_DEBUG',TRUE);
 // 分离common模块
 define('COMMON_PATH','./Common/');
 
-// 自动绑定(自动生成)产品某块
+// 自动绑定(自动生成)产品某块,使用完代码需要注释？否则报错
 // define("BIND_MODULE","Good");
 // define('BUILD_CONTROLLER_LIST','Good');
 // define('BUILD_MODEL_LIST','Good');

@@ -85,6 +85,6 @@ function __($cName=NULL, $formatData=NULL)
  */
 function throwError($error=NULL)
 {
-    if(!C("SHOW_ERROR_MSG")) E(!__("THROW_ERROR_FRIENDLY") ? C("ERROR_MESSAGE") ? __("THROW_ERROR_FRIENDLY"));
+    if(!C("SHOW_ERROR_MSG")) E(!__("THROW_ERROR_FRIENDLY") ? C("ERROR_MESSAGE") : __("THROW_ERROR_FRIENDLY"));
     else E($error); 
 }

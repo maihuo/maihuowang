@@ -21,7 +21,7 @@ class GoodModel extends Model {
  		$map = ['deleted' => ["NEQ", "1"]];
  		if($keyWord) $map["concat(title, description)"] = ["LIKE", $keyWord];
 
-		$goods = $this->field(["id","tite","description","marketprice","productprice","concat('".PUBLIC_PATH."',thumb)"=>"image"])->where($map)->page($pageID, $rowCount)->select();
+		$goods = $this->field(["id","title","description","marketprice","productprice","concat('".PUBLIC_PATH."',thumb)"=>"image"])->where($map)->page($pageID, $rowCount)->select();
 
 		$count = $this->where($map)->count();
 		if(!empty($error = $this->getDbError())) {
